@@ -391,41 +391,52 @@
   <nav>
     <h1>FVC</h1>
   </nav>
-  <article id='schedule' class='current'>
+  <article id='segmented-article' class='current'>
     <section>
-      <h2>M | T | W | T | F | S</h2>
-      <ul class='list' id="schedule-content-container">
-        <!-- EVENTS -->
-      </ul>    
+      <div class='horizontal centered'>
+        <div class='segmented'>
+          <a class='button selected'>Sat</a>
+          <a class='button'>Sun</a>
+          <a class='button'>Mon</a>
+          <a class='button'>Tues</a>
+          <a class='button'>Wed</a>
+          <a class='button'>Thurs</a>
+          <a class='button'>Fri</a>
+          <a class='button'>Sat</a>
+        </div>
+      </div>
+
+      <div id="toggle-panels" class="full-week-schedule-container">
+        <!-- weekly schedule -->
+      </div>
     </section>
   </article>
-  <nav>
-    <a class='button back'>Demo</a>
-    <h1>Segmented Control</h1>
-  </nav>
-  
+
   <script id="indi-event-sheet-template" type="text/x-handlebars-template">
-    {{#each eventData}}
-      <li class='comp'>
-        <aside>
-          <img title='{{title}}' src="{{image_source}}" height="80px">
-        </aside>
-        <div>
-          <h3>{{title}}</h3>
-          <h4>{{min_date}} - {{max_date}}</h4>
-          <p>{{description}}</p>
-        </div>
-        <aside>
-          <span class='show-detail'></span>
-        </aside>
-      </li>
-    {{/each}}
+    <div>
+      <h2>Monday</h2>
+      {{#each eventData}}
+        <li class='comp'>
+          <aside>
+            <img title='{{title}}' src="{{image_source}}" height="80px">
+          </aside>
+          <div>
+            <h3>{{title}}</h3>
+            <h4>{{min_date}} - {{max_date}}</h4>
+            <p>{{description}}</p>
+          </div>
+          <aside>
+            <span class='show-detail'></span>
+          </aside>
+        </li>
+      {{/each}}
+    </div>
   </script>
 
+  <script type="text/javascript" src="js/template.js"></script>
   <script type="text/javascript" src="js/model.js"></script>
   <script type="text/javascript" src="js/view.js"></script>
   <script type="text/javascript" src="js/controller.js"></script>
-  <script type="text/javascript" src="js/template.js"></script>
   <script type="text/javascript">
     Controller.init();
   </script>

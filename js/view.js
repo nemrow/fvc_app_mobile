@@ -1,3 +1,7 @@
 var View = {
-  schedulePageContainer: $('#schedule-content-container')
+  schedulePageContainer: $('.full-week-schedule-container'),
+
+  showLoginPage: function () {
+
+  }
 };
