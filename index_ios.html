@@ -393,19 +393,7 @@
   </nav>
   <article id='segmented-article' class='current'>
     <section>
-      <div class='horizontal centered'>
-        <div class='segmented'>
-          <a class='button selected'>Sat</a>
-          <a class='button'>Sun</a>
-          <a class='button'>Mon</a>
-          <a class='button'>Tues</a>
-          <a class='button'>Wed</a>
-          <a class='button'>Thurs</a>
-          <a class='button'>Fri</a>
-          <a class='button'>Sat</a>
-        </div>
-      </div>
-
+      <div id='segmentedPanel' class='horizontal centered'></div>
       <div id="toggle-panels" class="full-week-schedule-container">
         <!-- weekly schedule -->
       </div>
@@ -413,24 +401,29 @@
   </article>
 
   <script id="indi-event-sheet-template" type="text/x-handlebars-template">
-    <div>
-      <h2>Monday</h2>
-      {{#each eventData}}
-        <li class='comp'>
-          <aside>
-            <img title='{{title}}' src="{{image_source}}" height="80px">
-          </aside>
-          <div>
-            <h3>{{title}}</h3>
-            <h4>{{min_date}} - {{max_date}}</h4>
-            <p>{{description}}</p>
-          </div>
-          <aside>
-            <span class='show-detail'></span>
-          </aside>
-        </li>
+      {{#each schedule}}
+        <div>
+          <h2>{{day_of_week}}</h2>
+          {{#each event_instances}}
+            <div>
+              <li class='comp'>
+                <aside>
+                  <img title='{{title}}' src="{{image_source}}" height="80px">
+                </aside>
+                <div>
+                  <h3>{{title}}</h3>
+                  <h4>{{min_date}} - {{max_date}}</h4>
+                  <p>{{description}}</p>
+                  <p>{{date}}</p>
+                </div>
+                <aside>
+                  <span class='show-detail'></span>
+                </aside>
+              </li>
+            </div>
+          {{/each}}
+        </div>
       {{/each}}
-    </div>
   </script>
 
   <script type="text/javascript" src="js/template.js"></script>
