@@ -17,16 +17,33 @@ var Controller = {
     });
   },
 
-  segmentedButtonsConfig: function () {
+  createSegmentedLabels: function () {
     var labels = []
     for (i=0; i < Model.schedule.length; i++) {
       labels.push(Model.schedule[i].day_of_week);
     }
+    return labels
+  },
+
+  segmentedButtonsConfig: function () {
     var segmentedOptions = {
-      labels : labels,
-      selected: 1
+      labels : Controller.createSegmentedLabels(),
+      selected: Controller.weekdayOffsetIndex()
     };
     return segmentedOptions;
+  },
+
+  dateDifference: function (date1, date2) {
+    var timeDiff = Math.abs(date1.getTime() - date2.getTime());
+    var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+    return diffDays
+  },
+
+  weekdayOffsetIndex: function () {
+    var todaysDate = Model.todaysDate();
+    var firstDayOfWeekDate = Model. firstDayOfWeekDate();
+    diff = Controller.dateDifference(todaysDate, firstDayOfWeekDate)
+    return diff
   },
 
   loadUserDataSuccess: function (data) {
