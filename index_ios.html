@@ -408,17 +408,13 @@
             <div>
               <li class='comp'>
                 <aside>
-                  <img title='{{title}}' src="{{image_source}}" height="80px">
+                  <img title='{{event.title}}' src="{{event.image_source}}" height="80px" width="80px">
                 </aside>
                 <div>
-                  <h3>{{title}}</h3>
+                  <h3>{{event.title}}</h3>
                   <h4>{{min_date}} - {{max_date}}</h4>
-                  <p>{{description}}</p>
-                  <p>{{date}}</p>
+                  <p>{{event.description}}</p>
                 </div>
-                <aside>
-                  <span class='show-detail'></span>
-                </aside>
               </li>
             </div>
           {{/each}}
