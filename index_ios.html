@@ -388,10 +388,11 @@
   </style>
 </head>
 <body>
-  <nav>
-    <h1>FVC</h1>
+  <nav class="current">
+    <a class='button go-to-navigation'>Nav</a>
+    <h1>FVC Schedule</h1>
   </nav>
-  <article id='segmented-article' class='current'>
+  <article id='schedule' class='current'>
     <section>
       <div id='segmentedPanel' class='horizontal centered'></div>
       <div id="toggle-panels" class="full-week-schedule-container">
@@ -399,6 +400,42 @@
       </div>
     </section>
   </article>
+
+  <nav>
+    <h1>Navigation</h1>
+  </nav>
+  <article id="navigation">
+    <section>
+      <ul class='list' role='list'>
+        <li class='comp' data-goto="schedule">
+          <div>
+            <h3>Schedule</h3>
+          </div>
+          <aside>
+            <span class='nav'></span>
+          </aside>
+        </li>
+        <li class='comp' data-goto="places">
+          <div>
+            <h3>Babysitting</h3>
+          </div>
+          <aside>
+            <span class='nav'></span>
+          </aside>
+        </li>
+        <li class='comp' data-goto="things">
+          <div>
+            <h3>Settings</h3>
+          </div>
+          <aside>
+            <span class='nav'></span>
+          </aside>
+        </li>
+      </ul>
+    </section>
+  </article>
+
+
 
   <script id="indi-event-sheet-template" type="text/x-handlebars-template">
       {{#each schedule}}

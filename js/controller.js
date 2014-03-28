@@ -48,7 +48,15 @@ var Controller = {
 
   loadUserDataSuccess: function (data) {
     Model.schedule = data.schedule;
+    Controller.initPage();
     Controller.loadSchedule();
+  },
+
+  initPage: function () {
+    // Initialize navigation
+    $('body').on('singletap doubletap', '.go-to-navigation', function() {
+      $.UIGoToArticle('#navigation');
+    });
   },
 
   activateSchedule: function () {
