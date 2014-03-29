@@ -48,6 +48,7 @@ var Controller = {
 
   loadUserDataSuccess: function (data) {
     Model.schedule = data.schedule;
+    Model.events = data.events;
     Controller.initPage();
     Controller.loadSchedule();
   },
@@ -70,8 +71,7 @@ var Controller = {
   },
 
   loadSchedule: function () {
-    var context = {schedule: Model.schedule};
-    View.schedulePageContainer.append(Template.indiEvent(context));
+    View.injectSchedule();
     Controller.activateSchedule();
   }
 };

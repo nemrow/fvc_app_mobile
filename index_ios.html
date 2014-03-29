@@ -10,7 +10,9 @@
   <link rel="stylesheet" href="chui/chui-ios-3.5.2.css">
   <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
   <script src="chui/chui-3.5.2.js"></script>
+  <script type="text/javascript" src="js/time.js"></script>
   <script type="text/javascript" src="js/handlebars-v1.3.0.js"></script>
+  <script type="text/javascript" src="js/handlebars_helpers.js"></script>
   <style>
     .icon {
       height: 40px;
@@ -435,28 +437,39 @@
     </section>
   </article>
 
+  <script id="indi-event-page-template" type="text/x-handlebars-template">
+    <nav class="next">
+      <a class='button back'>Back</a>
+      <h1>{{event.title}}</h1>
+    </nav>
+    <article class="next indi-event-page" id="event-id-{{event.id}}">
+      <p>{{event.description}}</p>
+    </article>
+  </script>
 
 
   <script id="indi-event-sheet-template" type="text/x-handlebars-template">
-      {{#each schedule}}
-        <div>
-          <h2>{{day_of_week}}</h2>
+   {{#each schedule}}
+      <div>
+        <h2>{{day_of_week}}</h2>
+        <ul class='list'>
           {{#each event_instances}}
-            <div>
-              <li class='comp'>
-                <aside>
-                  <img title='{{event.title}}' src="{{event.image_source}}" height="80px" width="80px">
-                </aside>
-                <div>
-                  <h3>{{event.title}}</h3>
-                  <h4>{{min_date}} - {{max_date}}</h4>
-                  <p>{{event.description}}</p>
-                </div>
-              </li>
-            </div>
+            <li class='comp' data-goto="event-id-{{event.id}}">
+              <aside>
+                <span class='icon weather'></span>
+              </aside>
+              <div>
+                <h3>{{event.title}}</h3>
+              </div>
+              <aside>
+                <h4>{{time min_date}} - {{time max_date}}</h4>
+                <span class='nav'></span>
+              </aside>
+            </li>
           {{/each}}
-        </div>
-      {{/each}}
+        </ul>
+      </div>
+    {{/each}}
   </script>
 
   <script type="text/javascript" src="js/template.js"></script>
