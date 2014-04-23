@@ -391,49 +391,14 @@
 </head>
 <body>
   <nav class="current">
-    <a class='button go-to-navigation'>Nav</a>
     <h1>FVC Schedule</h1>
   </nav>
   <article id='schedule' class='current'>
     <section>
-      <div id='segmentedPanel' class='horizontal centered'></div>
+      <div id='segmentedPanelSchedule' class='horizontal centered'></div>
       <div id="toggle-panels" class="full-week-schedule-container">
         <!-- weekly schedule -->
       </div>
-    </section>
-  </article>
-
-  <nav>
-    <h1>Navigation</h1>
-  </nav>
-  <article id="navigation">
-    <section>
-      <ul class='list' role='list'>
-        <li class='comp' data-goto="schedule">
-          <div>
-            <h3>Schedule</h3>
-          </div>
-          <aside>
-            <span class='nav'></span>
-          </aside>
-        </li>
-        <li class='comp' data-goto="places">
-          <div>
-            <h3>Babysitting</h3>
-          </div>
-          <aside>
-            <span class='nav'></span>
-          </aside>
-        </li>
-        <li class='comp' data-goto="things">
-          <div>
-            <h3>Settings</h3>
-          </div>
-          <aside>
-            <span class='nav'></span>
-          </aside>
-        </li>
-      </ul>
     </section>
   </article>
 
@@ -451,18 +416,18 @@
   <script id="indi-event-sheet-template" type="text/x-handlebars-template">
    {{#each schedule}}
       <div>
-        <h2>{{day_of_week}}</h2>
+        <h2>{{day}}</h2>
         <ul class='list'>
-          {{#each event_instances}}
-            <li class='comp' data-goto="event-id-{{event.id}}">
+          {{#each events}}
+            <li class='comp' data-goto="event-id-{{id}}">
               <aside>
                 <span class='icon weather'></span>
               </aside>
               <div>
-                <h3>{{event.title}}</h3>
+                <h3>{{title}}</h3>
               </div>
               <aside>
-                <h4>{{time min_date}} - {{time max_date}}</h4>
+                <h4>{{min_time}} - {{duration}}</h4>
                 <span class='nav'></span>
               </aside>
             </li>

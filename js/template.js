@@ -5,8 +5,10 @@ var Template = {
 
   indiEventPages: function () {
     var html = ""
-    for (i=0; i < Model.events.length; i++) {
-      html += Template.indiEventPage({event: Model.events[i]})
+    for (var day=0; day < Model.schedule.length; day++) {
+      for (var event=0; event < Model.schedule[day].events.length; event++) {
+        html += Template.indiEventPage({event: Model.schedule[day].events[event]});
+      };
     };
     return html
   }

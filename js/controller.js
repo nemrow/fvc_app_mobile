@@ -11,7 +11,7 @@ var Controller = {
 
   loadUserData: function () {
     $.ajax({
-      url: "http://localhost:3000/api/v1/load_data?login_code=1234",
+      url: "http://localhost:3000/api/v1/load_data",
       success: Controller.loadUserDataSuccess,
       dataType: 'json'
     });
@@ -20,7 +20,7 @@ var Controller = {
   createSegmentedLabels: function () {
     var labels = []
     for (i=0; i < Model.schedule.length; i++) {
-      labels.push(Model.schedule[i].day_of_week);
+      labels.push(Model.schedule[i].day);
     }
     return labels
   },
@@ -47,8 +47,7 @@ var Controller = {
   },
 
   loadUserDataSuccess: function (data) {
-    Model.schedule = data.schedule;
-    Model.events = data.events;
+    Model.schedule = JSON.parse(data.schedule);
     Controller.initPage();
     Controller.loadSchedule();
   },
@@ -60,13 +59,17 @@ var Controller = {
     });
   },
 
-  activateSchedule: function () {
-    var segmentedOptions = {
+  segmentedOptions: function () {
+    return {
       labels : Controller.segmentedButtonsConfig().labels,
       selected: Controller.segmentedButtonsConfig().selected
-    };
+    }
+  },
+
+  activateSchedule: function () {
+    var segmentedOptions = Controller.segmentedOptions();
     var newSegmented = $.UICreateSegmented(segmentedOptions);
-    $('#segmentedPanel').append(newSegmented);
+    $('#segmentedPanelSchedule').append(newSegmented);
     $('.segmented').UIPanelToggle('#toggle-panels',function(){$.noop;});
   },
 
