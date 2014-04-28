@@ -34,14 +34,12 @@ var Controller = {
   },
 
   weekdayOffsetIndex: function () {
-    var todaysDate = Model.todaysDate();
-    var firstDayOfWeekDate = Model. firstDayOfWeekDate();
-    diff = Controller.dateDifference(todaysDate, firstDayOfWeekDate)
-    return diff
+    return Model.todaysOffset;
   },
 
   loadUserDataSuccess: function (data) {
     Model.schedule = JSON.parse(data.schedule);
+    Model.todaysOffset = data.todaysOffset;
     Controller.initPage();
     Controller.loadSchedule();
   },

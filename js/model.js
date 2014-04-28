@@ -11,5 +11,9 @@ var Model = {
     var firstDayOfWeekDate = new Date(Model.schedule[0].date);
     firstDayOfWeekDate.setHours(0,0,0,0);
     return firstDayOfWeekDate;
+  },
+
+  apiBase: function () {
+    return "http://localhost:3000"
   }
 };
