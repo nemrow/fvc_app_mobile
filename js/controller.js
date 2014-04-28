@@ -1,17 +1,11 @@
 var Controller = {
   init: function () {
-    if (Model.userKey()) {
-      console.log('userKey')
-      Controller.loadUserData();
-    } else {
-      console.log('no user key')
-      View.showLoginPage();
-    }
+    Controller.loadUserData();
   },
 
   loadUserData: function () {
     $.ajax({
-      url: "http://localhost:3000/api/v1/load_data",
+      url: Model.apiBase() + "/api/v1/load_data",
       success: Controller.loadUserDataSuccess,
       dataType: 'json'
     });
