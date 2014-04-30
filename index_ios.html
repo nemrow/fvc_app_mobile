@@ -7,7 +7,9 @@
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="msapplication-tap-highlight" content="no">
   <title>ChocolateChip-UI Demo iOS</title>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700|Fjalla+One' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="chui/chui-ios-3.5.2.css">
+  <link rel="stylesheet" href="css/css_overrides.css">
   <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
   <script src="chui/chui-3.5.2.js"></script>
   <script type="text/javascript" src="js/time.js"></script>
@@ -391,7 +393,7 @@
 </head>
 <body>
   <nav class="current">
-    <h1>FVC Schedule</h1>
+    <img class="global-nav-image" src="images/custom/starfish.png">
   </nav>
   <article id='schedule' class='current'>
     <section>
@@ -405,7 +407,7 @@
   <script id="indi-event-page-template" type="text/x-handlebars-template">
     <nav class="next">
       <a class='button back'>Back</a>
-      <h1>{{event.title}}</h1>
+      <img class="global-nav-image" src="images/custom/starfish.png">
     </nav>
     <article class="next indi-event-page" id="event-id-{{event.id}}">
       <p>{{event.description}}</p>
@@ -416,18 +418,14 @@
   <script id="indi-event-sheet-template" type="text/x-handlebars-template">
    {{#each schedule}}
       <div>
-        <h2>{{day}}</h2>
         <ul class='list'>
           {{#each events}}
             <li class='comp' data-goto="event-id-{{id}}">
-              <aside>
-                <span class='icon weather'></span>
-              </aside>
               <div>
-                <h3>{{title}}</h3>
+                <h2>{{title}}</h2>
+                <h3>{{time min_time}} - {{time duration}}</h3>
               </div>
               <aside>
-                <h4>{{min_time}} - {{duration}}</h4>
                 <span class='nav'></span>
               </aside>
             </li>

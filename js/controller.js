@@ -14,7 +14,7 @@ var Controller = {
   createSegmentedLabels: function () {
     var labels = []
     for (i=0; i < Model.schedule.length; i++) {
-      labels.push(Model.schedule[i].day);
+      labels.push(Model.schedule[i].day[0]);
     }
     return labels
   },

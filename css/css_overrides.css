@@ -1,0 +1,75 @@
+h1 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 24pt;
+  color: #67c2c2;
+}
+
+section h2, h2 {
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 20pt;
+  color: #3b6784;
+}
+
+
+
+li.comp > div > h3, h3 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 18pt;
+  color: #bbbbbb;
+}
+
+p {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 18pt;
+  color: #333333;
+}
+
+#global-nav {
+  background-color: #3b6784;
+}
+
+.segmented > .button:hover, .segmented > .button.selected{
+  background-color: #67c2c2;
+}
+
+.segmented > .button:first-of-type {
+  border-left: solid 2px #67c2c2;
+}
+
+.segmented > .button:last-of-type {
+  border-right: solid 2px #67c2c2;
+}
+
+.segmented > .button{
+  padding: 7px 15px;
+  border: solid 1px #67c2c2;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 24pt;
+}
+
+article > section, .slide-out > section {
+  padding-top: 0px;
+}
+
+.global-nav-image{
+  text-align: center;
+  display: inline-block;
+  margin: 0px auto;
+}
+
+.list > li {
+  padding: 0px;
+}
+
+li.comp > div{
+  padding: 25px;
+}
+
+section h2 {
+  margin: 10px 0 13px 0px;
+  overflow: visible;
+}
