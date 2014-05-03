@@ -420,11 +420,15 @@
             <li class='comp'>
               <div>
                 <h2>{{event.title}}</h2>
-                <h3>{{time event.min_time}} - {{time event.duration}}</h3>
+                <div class="event-list-lower-half-row">
+                  <h3>{{time event.min_time}} - {{time event.duration}}</h3>
+                  <div class="event-option-icons-container">
+                    <span class="custom-icon custom-icon-money"></span>
+                    <span class="custom-icon custom-icon-fvc"></span>
+                    <span class="custom-icon custom-icon-check"></span>
+                  </div>
+                </div>
               </div>
-              <aside>
-                <span class='nav'></span>
-              </aside>
             </li>
           </ul>
           <div class="event-description">
@@ -443,10 +447,17 @@
             <li class='comp' data-goto="event-id-{{id}}">
               <div>
                 <h2>{{title}}</h2>
-                <h3>{{time min_time}} - {{time duration}}</h3>
+                <div class="event-list-lower-half-row">
+                  <h3>{{time min_time}} - {{time duration}}</h3>
+                  <div class="event-option-icons-container">
+                    <span class="custom-icon custom-icon-money"></span>
+                    <span class="custom-icon custom-icon-fvc"></span>
+                    <span class="custom-icon custom-icon-check"></span>
+                  </div>
+                </div>
               </div>
               <aside>
-                <span class='nav'></span>
+                <span class="custom-icon custom-icon-right-arrow custom-right-aside-arrow"></span>
               </aside>
             </li>
           {{/each}}

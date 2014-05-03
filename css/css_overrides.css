@@ -11,11 +11,16 @@ section h2, h2 {
   color: #3b6784;
 }
 
-li.comp > div > h3, h3 {
+li.comp > div > h3, .list > li h3, h3 {
   font-family: 'Open Sans', sans-serif;
   font-weight: 700;
   font-size: 18pt;
   color: #bbbbbb;
+  margin: 0px;
+}
+
+.list > li h3, h3 {
+  float: left;
 }
 
 p {
@@ -64,7 +69,7 @@ article > section, .slide-out > section {
 }
 
 .list > li {
-  padding: 0px;
+  padding: 0px 15px 0px 0px;
 }
 
 li.comp > div{
@@ -78,4 +83,53 @@ section h2 {
 
 .event-description{
   margin: 20px;
+}
+
+a.button.back, a.button.backTo {
+  color: #fff;
+}
+
+a.button.back::before, a.button.backTo::before {
+  background-color: #fff;
+}
+
+.custom-icon {
+  background-image: url("../images/custom/icon_sprite.png");
+}
+
+.custom-icon-right-arrow {
+  height: 11px;
+  width: 10px;
+  margin: 3px 5px;
+  background-position: -60px 0px;
+}
+
+.custom-icon-money {
+  width: 6px;
+  height: 17px;
+  margin: 0 7px;
+  background-position: -20px 0px;
+}
+
+.custom-icon-fvc {
+  width: 19px;
+  height: 13px;
+  margin: 3px 2px;
+  background-position: 0px 0px;
+}
+
+.custom-icon-check {
+  width: 14px;
+  height: 15px;
+  margin: 1px 7px;
+  background-position: -40px 0px;
+}
+
+.custom-right-aside-arrow {
+  clear: both;
+}
+
+.event-option-icons-container{
+  float: right;
+  display:  inline-flex;
 }
