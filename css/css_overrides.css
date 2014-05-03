@@ -25,6 +25,10 @@ p {
   color: #333333;
 }
 
+nav > h1 {
+  margin-top: 7px;
+}
+
 #global-nav {
   background-color: #3b6784;
 }
