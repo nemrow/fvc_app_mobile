@@ -410,10 +410,26 @@
       <img class="global-nav-image" src="images/custom/starfish.png">
     </nav>
     <article class="next indi-event-page" id="event-id-{{event.id}}">
-      <p>{{event.description}}</p>
+      <section>
+        <div class="event-page-overview-header">
+          <ul class='list'>
+            <li class='comp'>
+              <div>
+                <h2>{{event.title}}</h2>
+                <h3>{{time event.min_time}} - {{time event.duration}}</h3>
+              </div>
+              <aside>
+                <span class='nav'></span>
+              </aside>
+            </li>
+          </ul>
+          <div class="event-description">
+            <p>ldjdlslskjsl sjs lskj slkjs lskjs lkslsksjlskjsl slks lskj slkjs </p>
+          </div>
+        </div>
+      </section>
     </article>
   </script>
-
 
   <script id="indi-event-sheet-template" type="text/x-handlebars-template">
    {{#each schedule}}

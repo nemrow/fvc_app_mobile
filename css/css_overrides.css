@@ -11,8 +11,6 @@ section h2, h2 {
   color: #3b6784;
 }
 
-
-
 li.comp > div > h3, h3 {
   font-family: 'Open Sans', sans-serif;
   font-weight: 700;
@@ -72,4 +70,8 @@ li.comp > div{
 section h2 {
   margin: 10px 0 13px 0px;
   overflow: visible;
+}
+
+.event-description{
+  margin: 20px;
 }
