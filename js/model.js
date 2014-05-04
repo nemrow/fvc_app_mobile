@@ -14,6 +14,6 @@ var Model = {
   },
 
   apiBase: function () {
-    return "http://localhost:3000"
+    return "http://fvc-app-s.herokuapp.com"
   }
 };
